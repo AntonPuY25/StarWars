@@ -17,7 +17,7 @@ export function AllPersonsStarWars() {
     },[])
     return (
         <div className={style.container}>
-            All Persons
+            All Persons 2
         </div>
     );
 }
