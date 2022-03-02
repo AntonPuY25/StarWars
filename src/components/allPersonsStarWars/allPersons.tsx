@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import style from 'src/components/all-persons-star-wars/styles.module.scss';
+import style from './styles.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {selectStarWarsPersons} from "../../store/selectors";
 import {getStarWarsPersons} from "../../store/reducer/actions";
