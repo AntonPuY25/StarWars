@@ -5,16 +5,52 @@
   height: 100vh;
   padding: 30px 200px 30px 200px;
 }
+@media screen and (max-width: 1849px) {
+  .container{
+    height: 150vh;
+  }
+}
+@media screen and (max-width: 1556px) {
+  .container{
+    height: 200vh;
+  }
+}
+@media screen and (max-width: 1258px) {
+  .container{
+    height: 250vh;
+  }
+}
+@media screen and (max-width: 953px) {
+  .container{
+    height: 450vh;
+  }
+}
 .number{
   padding-left: 110px;
+}
+@media screen and (max-width: 1202px) {
+  .number{
+    padding-left: 170px;
+  }
 }
 .containerCard{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
   flex-wrap: wrap;
   gap: 50px;
   padding-top: 50px;
+
+}
+@media screen and (max-width: 1849px) {
+  .containerCard{
+    padding-left: 100px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .containerCard{
+    padding-left: 220px;
+  }
 }
 .empty {
   display: flex;

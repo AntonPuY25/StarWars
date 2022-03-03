@@ -29,7 +29,7 @@ export interface StarWarsPersonsState {
 }
 
 export interface GetCurrentPersonPayloadType {
-    id: string;
+    title: string;
 }
 
 export interface GetAllPersonPayloadType {

@@ -2,14 +2,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+
   .rollBack {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: black;
     svg {
       width: 40px;
       height: 40px;
+      fill: black;
     }
+    svg:hover {
+      transition: all 0.3s;
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+      fill: #b4adad;
+    }
+  }
+  :global {
+    .ant-card-body{
+      background: #343434;
+      border-radius: 6px;
+      margin-top: -1px;
+      margin-right: -1px;
+      margin-left: -1px;
+    }
+  }
+}
+
+.personCard{
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #000000;
+  text-align: center;
+  padding-bottom: 5px;
+    .edit:hover {
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s;
+      svg{
+        fill: #b4adad;
+      }
+  }
+  input{
+    width: 150px;
+    height: 30px;
   }
 }

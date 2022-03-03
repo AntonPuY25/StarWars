@@ -1,26 +1,19 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import style from './styles.module.scss';
-import {useDispatch, useSelector} from "react-redux";
-import {selectStarWarsPerson} from "../../store/selectors";
-import {getStarWarsPerson} from "../../store/reducer/actions";
-import {useParams} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {selectIsLoading, selectStarWarsPerson} from "../../store/selectors";
 import {FullModeCardPerson} from "../fullModeCardPerson/fullModeCardPerson";
+import {Spin} from "antd";
 
 export function CurrentPersonsStarWars() {
 
-    const dispatch = useDispatch()
     const person = useSelector(selectStarWarsPerson)
-    const {id} = useParams<{ id: string }>()
-
-    useEffect(()=>{
-     if(id){
-         dispatch(getStarWarsPerson({id}))
-     }
-    },[])
+    const isLoading = useSelector(selectIsLoading)
 
     return (
         <div className={style.currentPersonContainer}>
-            {person && <FullModeCardPerson currentPerson={person}/>}
+            {isLoading? <div  className={style.loading}> <Spin  size="large"/></div> :
+                (person?.name && <FullModeCardPerson currentPerson={person}/>)}
         </div>
     );
 }

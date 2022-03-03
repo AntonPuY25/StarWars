@@ -8,10 +8,21 @@
   gap: 10px;
   background-color: black;
 }
+
+@media screen and (max-width: 1202px) {
+  .headerLogo{
+    padding-left: 100px;
+  }
+}
 .searchContainer{
   display: flex;
   align-items: center;
   position: relative;
+}
+@media screen and (max-width: 1202px) {
+  .searchContainer{
+    padding-left: 100px;
+  }
 }
 .searchText{
   border-radius: 4px;
@@ -36,7 +47,6 @@
 .search:focus::-webkit-input-placeholder{
   color: #b5b4b4;
 }
-
 .searchButton{
   border: none;
   cursor: pointer;
@@ -49,7 +59,11 @@
   position: absolute;
   left: 237px;
 }
-
+@media screen and (max-width: 1202px) {
+  .searchButton{
+    left: 325px;
+  }
+}
 input, textarea {outline:none;}
 input:active, textarea:active {outline:none;}
 :focus {outline:none;}

@@ -22,7 +22,7 @@ export function AllPersonsStarWars() {
 
     const currentPersonCard = useMemo(()=>{
         if(persons?.length){
-            return persons?.map((person,index)=><CardPerson key={index} currentPerson={person} index={++index}/>)
+            return persons?.map((person,index)=><CardPerson key={index} currentPerson={person}/>)
         }else{
         return <div className={style.empty}>
             <Empty description="Список Пуст" className={style.description}/>

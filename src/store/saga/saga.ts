@@ -16,9 +16,9 @@ function*  getStarWarsPersonWorker({
                                    }: ReturnType<typeof getStarWarsPerson>) {
     try {
         yield put(setIsLoadingSuccess(true))
-        const {data} = yield call(GetApi.getPerson,payload.id);
+        const {data} = yield call(GetApi.getPerson,payload.title);
       if(data){
-          yield put(setStarWarsPerson(data));
+          yield put(setStarWarsPerson(data.results[0]));
           yield put(setIsLoadingSuccess(false))
       }
     } catch (e) {

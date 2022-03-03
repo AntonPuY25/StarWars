@@ -20,7 +20,7 @@ export function Header() {
 
     return (
         <div className={style.headerContainer}>
-                <div>
+                <div className={style.headerLogo}>
                     <img src={logo} alt="logo"/>
                 </div>
                 <div className={style.searchContainer}>

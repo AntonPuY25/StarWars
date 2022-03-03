@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './styles.module.scss';
 import {TypeResponseData} from "../../store/interface/interface";
 import {Card} from "antd";
 import StarWars from '../../assets/img/backgroundCard.webp';
 import {RollbackOutlined} from "@ant-design/icons";
 import {PATH} from "../../App";
+import {Link} from "react-router-dom";
+import {GetInfoForCurrentPerson} from "./helpers";
 
 
 export interface cardPersonProps {
@@ -13,35 +15,31 @@ export interface cardPersonProps {
 
 export function FullModeCardPerson({currentPerson}:cardPersonProps) {
 
+    const [editMode,setEditMode] = useState(false)
+
     return (
         <div className={style.person}>
              <Card
                  hoverable
-                 style={{ width: 540, height: 520, cursor: 'default'}}
+                 style={{ width: 540, height: 550, cursor: 'default'}}
                  cover={<img alt="Photo" src={StarWars} />}
+
              >
-                 <div>
-                     Name: {currentPerson.name}
-                 </div>
-                 <div>
-                     Birthday: {currentPerson.birth_year}
-                 </div>
-                 <div>
-                     Color: {currentPerson.skin_color}
-                 </div>
-                 <div>
-                     Eyes: {currentPerson.eye_color}
-                 </div>
-                 <div>
-                     Hair: {currentPerson.hair_color}
-                 </div>
-                 <div>
-                     Gender: {currentPerson.gender}
-                 </div>
+                 <GetInfoForCurrentPerson dataPerson={currentPerson.name} title='Name'/>
+                 <GetInfoForCurrentPerson dataPerson={currentPerson.birth_year} title='Birthday'/>
+                 <GetInfoForCurrentPerson dataPerson={currentPerson.skin_color} title='Color'/>
+                 <GetInfoForCurrentPerson dataPerson={currentPerson.eye_color} title='Eyes'/>
+                 <GetInfoForCurrentPerson dataPerson={currentPerson.hair_color} title='Hair'/>
+                 <GetInfoForCurrentPerson dataPerson={currentPerson.gender} title='Gender'/>
+
                  <div className={style.rollBack}>
-                     <RollbackOutlined onClick={()=>window.location.pathname = PATH.startPage} />
+                     <Link to={PATH.startPage}>
+                     <RollbackOutlined  />
+                     </Link>
                  </div>
+
              </Card>
+
         </div>
     );
 }

@@ -20,7 +20,7 @@ function App() {
         <Router>
         <Routes>
           <Route path={PATH.startPage} element={ <AllPersonsStarWars />} />
-          <Route path={PATH.currentPerson + '/:id'} element={<CurrentPersonsStarWars/>}/>
+          <Route path={PATH.currentPerson} element={<CurrentPersonsStarWars/>}/>
         </Routes>
         </Router>
 

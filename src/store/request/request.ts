@@ -9,8 +9,8 @@ const GetApi = {
     getAllPersons({page,title}: GetAllPersonPayloadType) {
         return instance.get(`people?page=${page}&search=${title||''}`).then(response => response)
     },
-    getPerson(id:string) {
-        return instance.get(`people/${id}`).then(response => response)
+    getPerson(title:string) {
+        return instance.get(`people/?search=${title}`).then(response => response)
     },
 }
 export default GetApi
