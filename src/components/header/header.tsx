@@ -12,10 +12,10 @@ export function Header() {
                     <img src={logo} alt="logo"/>
                 </div>
                 <div className={style.searchContainer}>
-                   <form className={style.searchText} action="search" method="get">
+                   <div className={style.searchText} >
                        <input className={style.search} type="text" name="search" placeholder="Search Star Wars"/>
                        <button className={style.searchButton}></button>
-                   </form>
+                   </div>
 
                 </div>
         </div>

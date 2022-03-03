@@ -29,7 +29,9 @@ export function AllPersonsStarWars() {
 
     return (
         <div className={style.container}>
-            <PaginationComponent/>
+            <div className={style.number}>
+                <PaginationComponent/>
+            </div>
            <div className={style.containerCard}>
                {currentPersonCard}
            </div>

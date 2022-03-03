@@ -11,7 +11,7 @@ export const PaginationComponent = () =>{
 
     return(
         <div>
-            <Pagination size="small" current={currentPage} onChange={onChange} total={50} />
+            <Pagination size="default" current={currentPage} onChange={onChange} total={50} />
         </div>
     )
 
