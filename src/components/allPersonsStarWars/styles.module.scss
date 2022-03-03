@@ -1,6 +1,18 @@
 .container{
-  &-card{
-    display: flex;
-
-  }
+  background-image: url("../../assets/img/mainFon.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 30px 200px 30px 200px;
+}
+.number{
+  padding-left: 110px;
+}
+.containerCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-top: 50px;
 }

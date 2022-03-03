@@ -2,6 +2,7 @@ import {createStandardAction} from "typesafe-actions";
 import {GetAllPersonPayloadType, GetCurrentPersonPayloadType, TypeResponseData} from "../interface/interface";
 
 
+
 export const getStarWarsPerson = createStandardAction('GET_STAR_WARS_PERSON')<GetCurrentPersonPayloadType>();
 
 export const setStarWarsPerson = createStandardAction(
