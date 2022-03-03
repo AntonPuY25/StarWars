@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+
   .rollBack {
     display: flex;
     align-items: center;
@@ -12,4 +12,23 @@
       height: 40px;
     }
   }
+  :global {
+    .ant-card-body{
+      background: #343434;
+      border-radius: 6px;
+      margin-top: -1px;
+      margin-right: -1px;
+      margin-left: -1px;
+    }
+  }
+}
+.personCard{
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  color: #000000;
+  text-align: center;
+  padding-bottom: 5px;
 }
