@@ -4,6 +4,7 @@ import {AllPersonsStarWars} from "./components/allPersonsStarWars/allPersons";
 import {CurrentPersonsStarWars} from "./components/currentPerson/currentPerson";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import {Header} from "./components/header/header";
 
 
 export const PATH = {
@@ -13,8 +14,9 @@ export const PATH = {
 
 function App() {
   return (
-    <div className={style.container}>
+    <div className={style.body}>
 
+        <Header/>
         <Router>
         <Routes>
           <Route path={PATH.startPage} element={ <AllPersonsStarWars />} />

@@ -23,7 +23,7 @@ export function CurrentPersonsStarWars() {
 
     return (
         <div className={style.container}>
-            Current Persons
+            {person?.name}
             <Link to={PATH.startPage}>Home</Link>
         </div>
     );
