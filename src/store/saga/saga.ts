@@ -4,24 +4,26 @@ import GetApi from "../request/request";
 import {
     getStarWarsPerson,
     getStarWarsPersons,
-    setCountPersonsSuccess,
+    setCountPersonsSuccess, setIsLoadingSuccess,
     setStarWarsPerson,
     setStarWarsPersons
 } from "../reducer/actions";
 import {getType} from "typesafe-actions";
-import {GetAllPersonsPayloadType} from "../interface/interface";
 
 
 function*  getStarWarsPersonWorker({
                                        payload,
                                    }: ReturnType<typeof getStarWarsPerson>) {
     try {
+        yield put(setIsLoadingSuccess(true))
         const {data} = yield call(GetApi.getPerson,payload.id);
       if(data){
           yield put(setStarWarsPerson(data));
+          yield put(setIsLoadingSuccess(false))
       }
     } catch (e) {
         console.log(e);
+        yield put(setIsLoadingSuccess(false))
     }
 }
 
@@ -34,13 +36,16 @@ function*  getStarWarsPersonsWorker({
                                        payload,
                                    }: ReturnType<typeof getStarWarsPersons>) {
     try {
-        const {data} = yield call(GetApi.getAllPersons,payload.page);
+        yield put(setIsLoadingSuccess(true))
+        const {data} = yield call(GetApi.getAllPersons,payload);
         if(data){
             yield put(setStarWarsPersons(data.results));
             yield put(setCountPersonsSuccess(data.count));
+            yield put(setIsLoadingSuccess(false))
         }
     } catch (e) {
         console.log(e);
+        yield put(setIsLoadingSuccess(false))
     }
 }
 
@@ -48,6 +53,8 @@ function* getStarWarsPersonsWatcher() {
     yield takeLatest(getType(getStarWarsPersons), getStarWarsPersonsWorker);
 }
 
+
 export default function* businessWatchers() {
-    yield all([getStarWarsPersonWatcher(), getStarWarsPersonsWatcher()]);
+    yield all([getStarWarsPersonWatcher(),
+        getStarWarsPersonsWatcher()]);
 }

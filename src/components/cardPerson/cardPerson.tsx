@@ -10,10 +10,6 @@ export interface cardPersonProps {
 
 export function CardPerson({currentPerson,index}:cardPersonProps) {
 
-    console.log(currentPerson,'item')
-
-
-
     return (
         <div className={style.container}
              onClick={()=>window.location.pathname = `${PATH.currentPerson}/${index}`}>

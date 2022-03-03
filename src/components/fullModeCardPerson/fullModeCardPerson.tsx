@@ -13,10 +13,6 @@ export interface cardPersonProps {
 
 export function FullModeCardPerson({currentPerson}:cardPersonProps) {
 
-    console.log(currentPerson,'item')
-
-
-
     return (
         <div className={style.person}>
              <Card

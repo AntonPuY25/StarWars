@@ -8,3 +8,13 @@ export const selectStarWarsPersons = (state: State) =>
 
 export const selectStarWarsCountPersons = (state: State) =>
     state.starWarsReducer.countPersons;
+
+export const selectStarWarsSearchFilter = (state: State) =>
+    state.starWarsReducer.searchFilter;
+
+export const selectCurrentPage = (state: State) =>
+    state.starWarsReducer.currentPage;
+
+export const selectIsLoading = (state: State) =>
+    state.starWarsReducer.isLoading;
+

@@ -23,6 +23,9 @@ export interface StarWarsPersonsState {
     person: Nullable<TypeResponseData>;
     allPersons: Nullable<TypeResponseData[]>;
     countPersons: Nullable<number>;
+    searchFilter: string;
+    currentPage: number;
+    isLoading: boolean;
 }
 
 export interface GetCurrentPersonPayloadType {
@@ -31,6 +34,11 @@ export interface GetCurrentPersonPayloadType {
 
 export interface GetAllPersonPayloadType {
     page: string
+    title?: string
+}
+
+export interface SearchPersonsPayloadType {
+    title: string
 }
 
 

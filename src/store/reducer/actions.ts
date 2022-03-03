@@ -1,5 +1,10 @@
 import {createStandardAction} from "typesafe-actions";
-import {GetAllPersonPayloadType, GetCurrentPersonPayloadType, TypeResponseData} from "../interface/interface";
+import {
+    GetAllPersonPayloadType,
+    GetCurrentPersonPayloadType,
+    SearchPersonsPayloadType,
+    TypeResponseData
+} from "../interface/interface";
 
 
 
@@ -10,6 +15,13 @@ export const setStarWarsPerson = createStandardAction(
 )<TypeResponseData>();
 
 export const getStarWarsPersons = createStandardAction('GET_STAR_WARS_PERSONS')<GetAllPersonPayloadType>();
+
+export const searchStarWarsPersonsSuccess = createStandardAction('SEARCH_STAR_WARS_PERSONS_SUCCESS')<string>();
+
+export const setCurrentPageSuccess = createStandardAction('SET_CURRENT_PAGE_SUCCESS')<number>();
+
+export const setIsLoadingSuccess = createStandardAction('SET_IS_LOADING_SUCCESS')<boolean>();
+
 
 export const setStarWarsPersons = createStandardAction(
     'SET_STAR_WARS_PERSONS_SUCCESS',
