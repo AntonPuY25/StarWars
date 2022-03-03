@@ -13,33 +13,31 @@ export interface cardPersonProps {
 
 export function FullModeCardPerson({currentPerson}:cardPersonProps) {
 
-    console.log(currentPerson,'item')
-
 
 
     return (
         <div className={style.person}>
              <Card
                  hoverable
-                 style={{ width: 540, height: 520, cursor: 'default'}}
+                 style={{ width: 540, height: 550, cursor: 'default'}}
                  cover={<img alt="Photo" src={StarWars} />}
              >
-                 <div>
+                 <div className={style.personCard}>
                      Name: {currentPerson.name}
                  </div>
-                 <div>
+                 <div className={style.personCard}>
                      Birthday: {currentPerson.birth_year}
                  </div>
-                 <div>
+                 <div className={style.personCard}>
                      Color: {currentPerson.skin_color}
                  </div>
-                 <div>
+                 <div className={style.personCard}>
                      Eyes: {currentPerson.eye_color}
                  </div>
-                 <div>
+                 <div className={style.personCard}>
                      Hair: {currentPerson.hair_color}
                  </div>
-                 <div>
+                 <div className={style.personCard}>
                      Gender: {currentPerson.gender}
                  </div>
                  <div className={style.rollBack}>
