@@ -6,8 +6,8 @@ const instance = axios.create({
 })
 
 const GetApi = {
-    getAllPersons() {
-        return instance.get(`people?page=1`).then(response => response)
+    getAllPersons(page: string) {
+        return instance.get(`people?page=${page}`).then(response => response)
     },
     getPerson(id:string) {
         return instance.get(`people/${id}`).then(response => response)

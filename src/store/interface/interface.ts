@@ -22,11 +22,17 @@ export type TypeResponseData = {
 export interface StarWarsPersonsState {
     person: Nullable<TypeResponseData>;
     allPersons: Nullable<TypeResponseData[]>;
+    countPersons: Nullable<number>;
 }
 
 export interface GetCurrentPersonPayloadType {
     id: string;
 }
+
+export interface GetAllPersonPayloadType {
+    page: string
+}
+
 
 export interface GetAllPersonsPayloadType {
     count: number;

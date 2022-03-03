@@ -5,3 +5,6 @@ export const selectStarWarsPerson = (state: State) =>
 
 export const selectStarWarsPersons = (state: State) =>
     state.starWarsReducer.allPersons;
+
+export const selectStarWarsCountPersons = (state: State) =>
+    state.starWarsReducer.countPersons;

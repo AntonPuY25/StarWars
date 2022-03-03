@@ -3,17 +3,14 @@ import style from './styles.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {selectStarWarsPerson} from "../../store/selectors";
 import {getStarWarsPerson} from "../../store/reducer/actions";
-import {Link, useParams} from "react-router-dom";
-import {PATH} from "../../App";
+import {useParams} from "react-router-dom";
+import {FullModeCardPerson} from "../fullModeCardPerson/fullModeCardPerson";
 
 export function CurrentPersonsStarWars() {
 
     const dispatch = useDispatch()
     const person = useSelector(selectStarWarsPerson)
     const {id} = useParams<{ id: string }>()
-
-
-    console.log(person,'persons')
 
     useEffect(()=>{
      if(id){
@@ -22,9 +19,8 @@ export function CurrentPersonsStarWars() {
     },[])
 
     return (
-        <div className={style.container}>
-            Current Persons
-            <Link to={PATH.startPage}>Home</Link>
+        <div className={style.currentPersonContainer}>
+            {person && <FullModeCardPerson currentPerson={person}/>}
         </div>
     );
 }

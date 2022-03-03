@@ -1,7 +1,13 @@
 import {all, call, put, takeLatest} from 'typed-redux-saga';
 
 import GetApi from "../request/request";
-import {getStarWarsPerson, getStarWarsPersons, setStarWarsPerson, setStarWarsPersons} from "../reducer/actions";
+import {
+    getStarWarsPerson,
+    getStarWarsPersons,
+    setCountPersonsSuccess,
+    setStarWarsPerson,
+    setStarWarsPersons
+} from "../reducer/actions";
 import {getType} from "typesafe-actions";
 import {GetAllPersonsPayloadType} from "../interface/interface";
 
@@ -28,9 +34,10 @@ function*  getStarWarsPersonsWorker({
                                        payload,
                                    }: ReturnType<typeof getStarWarsPersons>) {
     try {
-        const {data} = yield call(GetApi.getAllPersons);
+        const {data} = yield call(GetApi.getAllPersons,payload.page);
         if(data){
             yield put(setStarWarsPersons(data.results));
+            yield put(setCountPersonsSuccess(data.count));
         }
     } catch (e) {
         console.log(e);
