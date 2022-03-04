@@ -15,7 +15,32 @@ export interface cardPersonProps {
 
 export function FullModeCardPerson({currentPerson}:cardPersonProps) {
 
-    const [editMode,setEditMode] = useState(false)
+    const arrDataPersonFields = [
+        {
+            field: 'Name',
+            data: currentPerson.name,
+        },
+        {
+            field: 'Birthday',
+            data: currentPerson.birth_year,
+        },
+        {
+            field: 'Color',
+            data: currentPerson.skin_color,
+        },
+        {
+            field: 'Eyes',
+            data: currentPerson.eye_color,
+        },
+        {
+            field: 'Hair',
+            data: currentPerson.hair_color,
+        },
+        {
+            field: 'Gender',
+            data: currentPerson.gender,
+        }
+    ]
 
     return (
         <div className={style.person}>
@@ -25,17 +50,16 @@ export function FullModeCardPerson({currentPerson}:cardPersonProps) {
                  cover={<img alt="Photo" src={StarWars} />}
 
              >
-                 <GetInfoForCurrentPerson dataPerson={currentPerson.name} title='Name'/>
-                 <GetInfoForCurrentPerson dataPerson={currentPerson.birth_year} title='Birthday'/>
-                 <GetInfoForCurrentPerson dataPerson={currentPerson.skin_color} title='Color'/>
-                 <GetInfoForCurrentPerson dataPerson={currentPerson.eye_color} title='Eyes'/>
-                 <GetInfoForCurrentPerson dataPerson={currentPerson.hair_color} title='Hair'/>
-                 <GetInfoForCurrentPerson dataPerson={currentPerson.gender} title='Gender'/>
+                 {arrDataPersonFields.map((currentPerson)=> <GetInfoForCurrentPerson dataPerson={currentPerson.data} title={currentPerson.field}/>
+                 )}
+
 
                  <div className={style.rollBack}>
+
                      <Link to={PATH.startPage}>
                      <RollbackOutlined  />
                      </Link>
+
                  </div>
 
              </Card>

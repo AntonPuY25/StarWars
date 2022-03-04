@@ -1,7 +1,7 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import style from './styles.module.scss';
 import logo from '../../assets/img/sw-logo.png';
-import { useDispatch } from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {getStarWarsPersons, searchStarWarsPersonsSuccess, setCurrentPageSuccess} from "../../store/reducer/actions";
 
 
@@ -20,14 +20,23 @@ export function Header() {
 
     return (
         <div className={style.headerContainer}>
+
                 <div className={style.headerLogo}>
                     <img src={logo} alt="logo"/>
                 </div>
+
                 <div className={style.searchContainer}>
                    <div className={style.searchText} >
+
                        <input className={style.search}
+                              onKeyDown={(e)=>{
+                                if(e.keyCode === 13){
+                                    searchPerson()
+                                }
+                              }}
                               onChange={(e)=>setSearchValue(e.target.value)}
                               placeholder="Search Star Wars"/>
+
                        <button className={style.searchButton} onClick={searchPerson}/>
                    </div>
 

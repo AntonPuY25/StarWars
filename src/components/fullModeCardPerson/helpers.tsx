@@ -28,7 +28,7 @@ export const GetInfoForCurrentPerson = ({title,dataPerson}:GetInfoForCurrentPers
 
         <span className={style.edit}>
 
-        <EditOutlined  onClick={()=>setEditMode(!editMode)}/>
+        <EditOutlined  onClick={()=>!editMode && setEditMode(true)}/>
 
         </span>
     </div>
